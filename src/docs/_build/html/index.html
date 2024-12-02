@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="Python3" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to RSOI PETRI MODELING&#39;s documentation! &#8212; RSOI PETRI MODELING  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=e5361099"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="welcome-to-rsoi-petri-modeling-s-documentation">
+<h1>Welcome to RSOI PETRI MODELING's documentation!<a class="headerlink" href="#welcome-to-rsoi-petri-modeling-s-documentation" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py class" id="module-app">
+<dt class="sig sig-object py" id="app.App">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">App</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sys_argv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.App" title="Link to this definition">¶</a></dt>
+<dd><p>Главный класс приложения, инициализирующий и запускающий PyQt приложение.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.App.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.App.run" title="Link to this definition">¶</a></dt>
+<dd><p>Отображает главное окно и запускает главный цикл обработки событий приложения.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="module-mainwindow">
+<dt class="sig sig-object py" id="mainwindow.MainWindow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mainwindow.</span></span><span class="sig-name descname"><span class="pre">MainWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mainwindow.MainWindow" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="mainwindow.MainWindow.choose_filename_save">
+<span class="sig-name descname"><span class="pre">choose_filename_save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mainwindow.MainWindow.choose_filename_save" title="Link to this definition">¶</a></dt>
+<dd><p>Открывает диалог выбора имени файла для сохранения.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mainwindow.MainWindow.mode">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Mode</span></em><a class="headerlink" href="#mainwindow.MainWindow.mode" title="Link to this definition">¶</a></dt>
+<dd><p>Возвращает текущий режим работы (обычный или симуляция).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mainwindow.MainWindow.new">
+<span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mainwindow.MainWindow.new" title="Link to this definition">¶</a></dt>
+<dd><p>Создает новый документ, очищая текущую редакцию.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mainwindow.MainWindow.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mainwindow.MainWindow.open" title="Link to this definition">¶</a></dt>
+<dd><p>Открывает существующий документ.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mainwindow.MainWindow.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mainwindow.MainWindow.save" title="Link to this definition">¶</a></dt>
+<dd><p>Сохраняет документ с текущим именем файла.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mainwindow.MainWindow.save_as">
+<span class="sig-name descname"><span class="pre">save_as</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mainwindow.MainWindow.save_as" title="Link to this definition">¶</a></dt>
+<dd><p>Сохраняет документ под новым именем.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mainwindow.MainWindow.save_petrinet">
+<span class="sig-name descname"><span class="pre">save_petrinet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mainwindow.MainWindow.save_petrinet" title="Link to this definition">¶</a></dt>
+<dd><p>Сохраняет петрограмму в выбранный файл.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mainwindow.MainWindow.sim_buttons_enabled">
+<span class="sig-name descname"><span class="pre">sim_buttons_enabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enabled</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mainwindow.MainWindow.sim_buttons_enabled" title="Link to this definition">¶</a></dt>
+<dd><p>Включает или отключает кнопки симуляции.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mainwindow.MainWindow.simulation_editor_switched">
+<span class="sig-name descname"><span class="pre">simulation_editor_switched</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_simulation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mainwindow.MainWindow.simulation_editor_switched" title="Link to this definition">¶</a></dt>
+<dd><p>Переключает режим редактора на симуляцию или обратно.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mainwindow.MainWindow.simulation_reset">
+<span class="sig-name descname"><span class="pre">simulation_reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mainwindow.MainWindow.simulation_reset" title="Link to this definition">¶</a></dt>
+<dd><p>Сбрасывает состояние симуляции.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mainwindow.MainWindow.simulation_run">
+<span class="sig-name descname"><span class="pre">simulation_run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mainwindow.MainWindow.simulation_run" title="Link to this definition">¶</a></dt>
+<dd><p>Запускает симуляцию.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mainwindow.MainWindow.simulation_step">
+<span class="sig-name descname"><span class="pre">simulation_step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#mainwindow.MainWindow.simulation_step" title="Link to this definition">¶</a></dt>
+<dd><p>Выполняет один шаг симуляции.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="module-petnetsim">
+<dt class="sig sig-object py" id="petnetsim.ConflictGroupType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">petnetsim.</span></span><span class="sig-name descname"><span class="pre">ConflictGroupType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#petnetsim.ConflictGroupType" title="Link to this definition">¶</a></dt>
+<dd><p>Типы конфликтных групп в модели конечных автоматов.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="petnetsim.PetriNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">petnetsim.</span></span><span class="sig-name descname"><span class="pre">PetriNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">places</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transitions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arcs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'counters':</span> <span class="pre">{'A':</span> <span class="pre">1,</span> <span class="pre">'I':</span> <span class="pre">1,</span> <span class="pre">'P':</span> <span class="pre">1,</span> <span class="pre">'T':</span> <span class="pre">1}}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#petnetsim.PetriNet" title="Link to this definition">¶</a></dt>
+<dd><p>Класс для представления сеть Петри.</p>
+<section id="id1">
+<h2>Атрибуты<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt>places<span class="classifier">tuple</span></dt><dd><p>Кортеж объектов мест сети Петри.</p>
+</dd>
+<dt>transitions<span class="classifier">tuple</span></dt><dd><p>Кортеж объектов переходов сети Петри.</p>
+</dd>
+<dt>arcs<span class="classifier">tuple</span></dt><dd><p>Кортеж объектов дуг сети Петри.</p>
+</dd>
+<dt>context<span class="classifier">dict</span></dt><dd><p>Контекст выполнения модели.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h2>Методы<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt>reset()</dt><dd><p>Сбрасывает состояние модели.</p>
+</dd>
+<dt>step(record_fired=True)</dt><dd><p>Выполняет один шаг симуляции.</p>
+</dd>
+<dt>print_places()</dt><dd><p>Выводит информацию о местах.</p>
+</dd>
+<dt>print_all()</dt><dd><p>Выводит полную информацию о сети.</p>
+</dd>
+<dt>validate()</dt><dd><p>Проверяет корректность модели сети Петри.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="petnetsim.PetriNet.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">places</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transitions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arcs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'counters':</span> <span class="pre">{'A':</span> <span class="pre">1,</span> <span class="pre">'I':</span> <span class="pre">1,</span> <span class="pre">'P':</span> <span class="pre">1,</span> <span class="pre">'T':</span> <span class="pre">1}}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#petnetsim.PetriNet.clone" title="Link to this definition">¶</a></dt>
+<dd><p>Создает клон сети Петри с новыми именами.</p>
+<section id="id3">
+<h3>Параметры<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>prefix<span class="classifier">str</span></dt><dd><p>Префикс для новых имен мест, переходов и дуг.</p>
+</dd>
+<dt>places<span class="classifier">list</span></dt><dd><p>Список для добавления клонированных мест.</p>
+</dd>
+<dt>transitions<span class="classifier">list</span></dt><dd><p>Список для добавления клонированных переходов.</p>
+</dd>
+<dt>arcs<span class="classifier">list</span></dt><dd><p>Список для добавления клонированных дуг.</p>
+</dd>
+<dt>context<span class="classifier">dict, необязательно</span></dt><dd><p>Контекст выполнения модели, по умолчанию используется стандартный контекст.</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h3>Исключения<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>TypeError</dt><dd><p>Если тип дуги не поддерживается.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="petnetsim.PetriNet.conflict_groups_str">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">conflict_groups_str</span></span><a class="headerlink" href="#petnetsim.PetriNet.conflict_groups_str" title="Link to this definition">¶</a></dt>
+<dd><p>Представляет строку, в которой перечислены конфликты между группами переходов.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="petnetsim.PetriNet.ended">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ended</span></span><a class="headerlink" href="#petnetsim.PetriNet.ended" title="Link to this definition">¶</a></dt>
+<dd><p>Возвращает состояние завершения симуляции.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="petnetsim.PetriNet.print_all">
+<span class="sig-name descname"><span class="pre">print_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#petnetsim.PetriNet.print_all" title="Link to this definition">¶</a></dt>
+<dd><p>Выводит полную информацию о местах, переходах и дугах сети Петри.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="petnetsim.PetriNet.print_places">
+<span class="sig-name descname"><span class="pre">print_places</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#petnetsim.PetriNet.print_places" title="Link to this definition">¶</a></dt>
+<dd><p>Выводит информацию о местах и количестве токенов в них.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="petnetsim.PetriNet.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#petnetsim.PetriNet.reset" title="Link to this definition">¶</a></dt>
+<dd><p>Сбрасывает состояние модели.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="petnetsim.PetriNet.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record_fired</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#petnetsim.PetriNet.step" title="Link to this definition">¶</a></dt>
+<dd><p>Выполняет один шаг симуляции.</p>
+<section id="id5">
+<h3>Параметры<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>record_fired<span class="classifier">bool, необязательно</span></dt><dd><p>Записывать ли активированные переходы, по умолчанию True.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="petnetsim.PetriNet.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#petnetsim.PetriNet.validate" title="Link to this definition">¶</a></dt>
+<dd><p>Проверяет корректность всей сети Петри.</p>
+<section id="id6">
+<h3>Заметка<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<p>В настоящее время реализация проверки отсутствует.</p>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class" id="module-editor">
+<dt class="sig sig-object py" id="editor.Editor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">editor.</span></span><span class="sig-name descname"><span class="pre">Editor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#editor.Editor" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="editor.Editor.keyPressEvent">
+<span class="sig-name descname"><span class="pre">keyPressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QKeyEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#editor.Editor.keyPressEvent" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="editor.Editor.keyReleaseEvent">
+<span class="sig-name descname"><span class="pre">keyReleaseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QKeyEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#editor.Editor.keyReleaseEvent" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="editor.Editor.mouseMoveEvent">
+<span class="sig-name descname"><span class="pre">mouseMoveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QMouseEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#editor.Editor.mouseMoveEvent" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="editor.Editor.mousePressEvent">
+<span class="sig-name descname"><span class="pre">mousePressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QMouseEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#editor.Editor.mousePressEvent" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">RSOI PETRI MODELING</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Andreev A.A..
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
