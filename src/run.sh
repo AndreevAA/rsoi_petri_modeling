@@ -1,3 +1,3 @@
-pip3 install --upgrade pip
-python3 -m pip install -r requirements.txt
+pipx install --upgrade pip
+python3 -m pipx install -r requirements.txt
 python3 __main__.py
