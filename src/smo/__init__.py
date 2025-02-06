@@ -1,4 +1,5 @@
 import json
+from time import gmtime, strftime
 
 from numpy.ma.core import arcsinh
 
@@ -15,6 +16,8 @@ class SMO:
         self.arcs = arcs
         self.graphics = graphics
 
+        self.__get_config()
+
     def __get_config(self):
         self.config = {
             "names": self.names,
@@ -27,7 +30,17 @@ class SMO:
     def __set_base_folder(self):
         self.folder = "../data"
 
+    def __generate_save_path(self):
+        return str(self.folder) + str(strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 
+    def save_config(self, save_path=None):
+
+        if save_path == None:
+            save_path = self.__generate_save_path()
+
+        # Сохранение в файл
+        with open(save_path, "w", encoding="utf-8") as f:
+            json.dump(self.config, f, ensure_ascii=False, indent=2)
 
     def create_smo_config_by_terminal(self):
             print("Введите данные для вашей Системы массового обслуживания (СМО).")

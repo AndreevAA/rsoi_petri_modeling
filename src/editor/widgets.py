@@ -13,6 +13,24 @@ from operator import attrgetter
 
 TClassPage = namedtuple('TClassNamePage', ('cls', 'page'))
 
+# class ConfigureSMODialog(QDialog):
+#     """Класс для создания диалогового окна configure_smo.ui."""
+#     def __init__(self, main_window):
+#         super(ConfigureSMODialog, self).__init__()
+#         uic.loadUi("editor/configure_smo.ui", self)
+#         self.main_window = main_window
+#
+#         # Пример подключения значений
+#         self.button_confirm.clicked.connect(self.on_confirm)
+#
+#     def on_confirm(self):
+#         """Обработчик нажатия на кнопку подтверждения в диалоговом окне."""
+#         places_count = self.spinBox_places.value()
+#         transitions_count = self.spinBox_transitions.value()
+#
+#         # Передать полученные параметры в главное окно
+#         self.main_window.apply_configuration(places_count, transitions_count)
+#         self.accept()
 
 class ItemProperties(QStackedWidget):
     TimedPDists = [('constant t = t_min', constant_distribution),

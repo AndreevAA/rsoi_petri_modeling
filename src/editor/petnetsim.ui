@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>PetNetSim editor</string>
+   <string>Моделирование работы сети Петри</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -30,6 +30,40 @@
     <property name="spacing">
      <number>3</number>
     </property>
+    <item row="3" column="0" colspan="2">
+     <widget class="QLabel" name="shortcuts_help_label">
+      <property name="text">
+       <string>A: toggle arc mode   P: add place   T: add transition    Del: delete selected</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="simulation_status_label">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>Симуляция...
+
+
+
+
+Статистика...
+
+
+
+
+Шаги...
+
+
+
+</string>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="0" rowspan="2">
      <widget class="Editor" name="editor"/>
     </item>
@@ -57,21 +91,21 @@
        <item>
         <widget class="QLabel" name="mode_t_label">
          <property name="text">
-          <string>Mode:</string>
+          <string>Режим:</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="mode_label">
          <property name="text">
-          <string>Normal</string>
+          <string>Нормальный</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="verify_pushButton">
          <property name="text">
-          <string>Verify</string>
+          <string>Проверка</string>
          </property>
         </widget>
        </item>
@@ -97,7 +131,7 @@
        <item>
         <widget class="QPushButton" name="simulation_pushButton">
          <property name="text">
-          <string>Simulation</string>
+          <string>Симуляция</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -110,14 +144,14 @@
           <bool>false</bool>
          </property>
          <property name="text">
-          <string>Run</string>
+          <string>Старт</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QDoubleSpinBox" name="simulation_wait_doubleSpinBox">
          <property name="prefix">
-          <string>step wait: </string>
+          <string>шаг: </string>
          </property>
          <property name="suffix">
           <string> s</string>
@@ -139,7 +173,7 @@
           <bool>false</bool>
          </property>
          <property name="text">
-          <string>Step</string>
+          <string>Шаг</string>
          </property>
         </widget>
        </item>
@@ -149,7 +183,7 @@
           <bool>false</bool>
          </property>
          <property name="text">
-          <string>Reset</string>
+          <string>Сброс</string>
          </property>
         </widget>
        </item>
@@ -175,40 +209,6 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QLabel" name="simulation_status_label">
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <property name="text">
-       <string>Simulation...
-
-
-
-
-stats...
-
-
-
-
-steps...
-
-
-
-</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0" colspan="2">
-     <widget class="QLabel" name="shortcuts_help_label">
-      <property name="text">
-       <string>A: toggle arc mode   P: add place   T: add transition    Del: delete selected</string>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -217,23 +217,24 @@ steps...
      <x>0</x>
      <y>0</y>
      <width>1037</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>Файл</string>
     </property>
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
     <addaction name="actionSaveAs"/>
+    <addaction name="actionCreate"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
   <action name="actionSave">
    <property name="text">
-    <string>Save</string>
+    <string>Сохранить</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
@@ -241,7 +242,7 @@ steps...
   </action>
   <action name="actionSaveAs">
    <property name="text">
-    <string>Save as</string>
+    <string>Сохранить как</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+S</string>
@@ -249,7 +250,7 @@ steps...
   </action>
   <action name="actionOpen">
    <property name="text">
-    <string>Open</string>
+    <string>Открыть</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
@@ -257,10 +258,15 @@ steps...
   </action>
   <action name="actionNew">
    <property name="text">
-    <string>New</string>
+    <string>Новый</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionCreate">
+   <property name="text">
+    <string>Создать</string>
    </property>
   </action>
  </widget>

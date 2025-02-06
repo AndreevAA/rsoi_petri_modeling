@@ -21,7 +21,7 @@
     <item row="0" column="0">
      <widget class="QLabel" name="empty_props_label">
       <property name="text">
-       <string>Nothing selected</string>
+       <string>Ничего не выбрано</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -41,7 +41,7 @@
        </sizepolicy>
       </property>
       <property name="text">
-       <string>&lt;b&gt;Place&lt;/b&gt;</string>
+       <string>&lt;b&gt;Место&lt;/b&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -51,7 +51,7 @@
     <item row="1" column="0">
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>Name</string>
+       <string>Имя</string>
       </property>
      </widget>
     </item>
@@ -61,7 +61,7 @@
     <item row="2" column="0">
      <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>Init tokens</string>
+       <string>Стартовые токены</string>
       </property>
      </widget>
     </item>
@@ -71,7 +71,7 @@
     <item row="3" column="0">
      <widget class="QLabel" name="label_12">
       <property name="text">
-       <string>Capacity</string>
+       <string>Вместимость</string>
       </property>
      </widget>
     </item>
@@ -85,14 +85,14 @@
     <item row="4" column="1">
      <widget class="QLabel" name="place_infinite_capacity_label">
       <property name="text">
-       <string>(infinite capacity = )</string>
+       <string>(бесконечная вместимость = )</string>
       </property>
      </widget>
     </item>
     <item row="5" column="0">
      <widget class="QLabel" name="label_3">
       <property name="text">
-       <string>Current tokens</string>
+       <string>Текущие токены</string>
       </property>
      </widget>
     </item>
@@ -135,7 +135,7 @@
        </sizepolicy>
       </property>
       <property name="text">
-       <string>&lt;b&gt;Transition&lt;/b&gt;</string>
+       <string>&lt;b&gt;Переход&lt;/b&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -145,7 +145,7 @@
     <item row="1" column="0">
      <widget class="QLabel" name="label_7">
       <property name="text">
-       <string>Name</string>
+       <string>Имя</string>
       </property>
      </widget>
     </item>
@@ -165,7 +165,7 @@
         <item row="0" column="0">
          <widget class="QLabel" name="label_4">
           <property name="text">
-           <string>(normal)</string>
+           <string>(нормальный)</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -185,7 +185,7 @@
            </sizepolicy>
           </property>
           <property name="prefix">
-           <string>priority: </string>
+           <string>приоритет: </string>
           </property>
          </widget>
         </item>
@@ -209,7 +209,7 @@
         <item row="0" column="0">
          <widget class="QLabel" name="label_13">
           <property name="text">
-           <string>p-distribution</string>
+           <string>p-распределение</string>
           </property>
          </widget>
         </item>
@@ -277,7 +277,7 @@
            <string> %</string>
           </property>
           <property name="prefix">
-           <string>probability: </string>
+           <string>вероятность: </string>
           </property>
           <property name="maximum">
            <number>100</number>
@@ -337,7 +337,7 @@
     <item row="1" column="0">
      <widget class="QLabel" name="label_10">
       <property name="text">
-       <string>Name</string>
+       <string>Имя</string>
       </property>
      </widget>
     </item>
@@ -347,7 +347,7 @@
     <item row="2" column="0">
      <widget class="QLabel" name="label_11">
       <property name="text">
-       <string>Tokens</string>
+       <string>Токены</string>
       </property>
      </widget>
     </item>
@@ -367,7 +367,7 @@
     <item row="3" column="0" colspan="2">
      <widget class="QCheckBox" name="arc_inhibitor_checkBox">
       <property name="text">
-       <string>Inhibitor</string>
+       <string>Ингрибитор</string>
       </property>
      </widget>
     </item>

@@ -1,6 +1,6 @@
 from PyQt5 import uic
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QMainWindow, QFileDialog, QMessageBox
+from PyQt5.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QDialog
 from editor.mode import ModeSwitch, Mode
 from editor.simulationcontroller import SimulationController
 from pathlib import Path
@@ -10,6 +10,9 @@ class MainWindow(QMainWindow):
     def __init__(self, root_path: Path):
         """Инициализация главного окна приложения."""
         super().__init__()
+
+        # Атрибут для хранения ссылки на окно конфигурации
+        self.configure_dialog = None
 
         # Загрузка пользовательского интерфейса из .ui файла
         uic.loadUi(str((root_path / 'editor' / 'petnetsim.ui').resolve()), self)
@@ -31,6 +34,9 @@ class MainWindow(QMainWindow):
         self.simulation_controller = SimulationController(self, self.editor)
         self.mode_switch = ModeSwitch(self)
 
+        # Подключаем кнопку "Создать" к обработчику
+        self.actionCreate.triggered.connect(self.open_configure_smo)
+
     @property
     def mode(self) -> Mode:
         """Возвращает текущий режим работы (обычный или симуляция)."""
@@ -40,6 +46,20 @@ class MainWindow(QMainWindow):
     def mode(self, new_mode: Mode):
         """Установка нового режима работы."""
         self.mode_switch.mode = new_mode
+
+    def open_configure_smo(self):
+        """Открывает диалог создания новой конфигурации сети Петри."""
+        # Проверяем, существует ли уже окно и открыто ли оно
+        if self.configure_dialog is None or not self.configure_dialog.isVisible():
+            # Создаём новое окно QDialog для конфигурации
+            self.configure_dialog = QDialog(self)
+            # Загружаем интерфейс из configure_smo.ui в диалог
+            uic.loadUi(str((Path(__file__).parent.parent / 'editor' / 'configure_smo.ui').resolve()), self.configure_dialog)
+            # Показываем окно
+            self.configure_dialog.exec_()
+        else:
+            # Если окно уже открыто, делаем его активным
+            self.configure_dialog.activateWindow()
 
     def choose_filename_save(self) -> None:
         """Открывает диалог выбора имени файла для сохранения."""

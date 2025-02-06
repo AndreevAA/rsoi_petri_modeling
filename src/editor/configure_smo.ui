@@ -1,0 +1,104 @@
+<ui version="4.0">
+<class>ConfigureSMO</class>
+<widget class="QDialog" name="ConfigureSMO">
+<property name="geometry">
+<rect>
+<x>0</x>
+<y>0</y>
+<width>400</width>
+<height>300</height>
+</rect>
+</property>
+<property name="windowTitle">
+<string>Настройка СМО</string>
+</property>
+<layout class="QVBoxLayout" name="verticalLayout">
+<item>
+<widget class="QLabel" name="label_places">
+<property name="text">
+<string>Введите количество мест:</string>
+</property>
+</widget>
+</item>
+<item>
+<widget class="QSpinBox" name="spinBox_places">
+<property name="minimum">
+<number>1</number>
+</property>
+<property name="maximum">
+<number>100</number>
+</property>
+</widget>
+</item>
+<item>
+<widget class="QLabel" name="label_transitions">
+<property name="text">
+<string>Введите количество переходов:</string>
+</property>
+</widget>
+</item>
+<item>
+<widget class="QSpinBox" name="spinBox_transitions">
+<property name="minimum">
+<number>1</number>
+</property>
+<property name="maximum">
+<number>100</number>
+</property>
+</widget>
+</item>
+
+<item>
+<widget class="QDialogButtonBox" name="buttonBox">
+<property name="standardButtons">
+<set>QDialogButtonBox::Ok|QDialogButtonBox::Cancel</set>
+</property>
+<property name="orientation">
+<enum>Qt::Horizontal</enum>
+</property>
+<property name="centerButtons">
+<bool>false</bool>
+</property>
+</widget>
+</item>
+</layout>
+</widget>
+<resources>
+<connections>
+
+<connection>
+<sender>buttonBox</sender>
+<signal>accepted()</signal>
+<receiver>ConfigureSMO</receiver>
+<slot>accept()</slot>
+<hints>
+<hint type="sourcelabel">
+<x>0</x>
+<y>0</y>
+</hint>
+<hint type="destinationlabel">
+<x>0</x>
+<y>0</y>
+</hint>
+</hints>
+</connection>
+
+<connection>
+<sender>buttonBox</sender>
+<signal>rejected()</signal>
+<receiver>ConfigureSMO</receiver>
+<slot>reject()</slot>
+<hints>
+<hint type="sourcelabel">
+<x>0</x>
+<y>0</y>
+</hint>
+<hint type="destinationlabel">
+<x>0</x>
+<y>0</y>
+</hint>
+</hints>
+</connection>
+</connections>
+</resources>
+</ui>
