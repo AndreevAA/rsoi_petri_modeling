@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1037</width>
+    <width>1082</width>
     <height>594</height>
    </rect>
   </property>
@@ -30,14 +30,14 @@
     <property name="spacing">
      <number>3</number>
     </property>
-    <item row="3" column="0" colspan="2">
+    <item row="7" column="2" colspan="3">
      <widget class="QLabel" name="shortcuts_help_label">
       <property name="text">
-       <string>A: toggle arc mode   P: add place   T: add transition    Del: delete selected</string>
+       <string>A: режим соединения   P: добавить место   T: добавить переход    Del: удалить выбранное</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
+    <item row="6" column="4">
      <widget class="QLabel" name="simulation_status_label">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -64,10 +64,29 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0" rowspan="2">
+    <item row="3" column="2" rowspan="4">
      <widget class="Editor" name="editor"/>
     </item>
-    <item row="0" column="0" colspan="2">
+    <item row="3" column="4">
+     <widget class="ItemProperties" name="item_properties">
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2" colspan="3">
      <widget class="QFrame" name="top_tools_frame">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -75,7 +94,7 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1,0,0,0,0,0,0,0">
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1,0,0,0,0,0,0,0,0">
        <property name="spacing">
         <number>3</number>
        </property>
@@ -99,6 +118,13 @@
         <widget class="QLabel" name="mode_label">
          <property name="text">
           <string>Нормальный</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
          </property>
         </widget>
        </item>
@@ -190,25 +216,6 @@
       </layout>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="ItemProperties" name="item_properties">
-      <property name="maximumSize">
-       <size>
-        <width>300</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <property name="currentIndex">
-       <number>-1</number>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -216,7 +223,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1037</width>
+     <width>1082</width>
      <height>24</height>
     </rect>
    </property>
@@ -228,7 +235,6 @@
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
     <addaction name="actionSaveAs"/>
-    <addaction name="actionCreate"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>

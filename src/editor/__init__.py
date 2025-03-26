@@ -13,6 +13,7 @@ from petnetsim.elements import Place, Transition, \
     Arc
 from .graphics_items import PlaceItem, TransitionItem, ArcItem, Port
 from .mode import Mode
+from editor.monitoring_widget import MonitoringWidget
 
 PlaceTransitionUnion = Union[Place, Transition, TransitionPriority, TransitionTimed, TransitionStochastic]
 TransitionUnion = Union[Transition, TransitionPriority, TransitionTimed, TransitionStochastic]
@@ -298,11 +299,13 @@ class Editor(QGraphicsView):
                 g = graphics[a]
             else:
                 g = (0, 0)  # default ports
+
+            print(g[0])
+
             source_port = source_item.ports[g[0]]
             target_port = target_item.ports[g[1]]
 
             item = self.add_arc(source_port, target_port, arc=a)
-
 
 class ArcModeTemporary:
     def __init__(self, source_port: Port, editor: Editor):

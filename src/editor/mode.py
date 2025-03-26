@@ -8,10 +8,10 @@ class Mode(enum.IntEnum):
     Simulation = 100
 
 
-ModeStrings = {Mode.Normal: 'Editor: Normal',
+ModeStrings = {Mode.Normal: 'Editor: Нормальный',
                Mode.ArcSource: 'Editor: Arc source',
                Mode.ArcTarget: 'Editor: Arc target',
-               Mode.Simulation: 'Simulation',
+               Mode.Simulation: 'Симуляция',
                }
 
 

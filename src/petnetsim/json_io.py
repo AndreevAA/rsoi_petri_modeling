@@ -78,6 +78,8 @@ def load(file, context=default_context(), opts=None):
     transitions = list(starmap(make_transition, data['transitions'].items()))
 
     def make_arc(name_idx: int, arc: list):
+        # Отладочная информация
+        print(len(names), names, name_idx, print(names[name_idx]))
         name = names[name_idx]
         offset = 0
         cls = Arc
@@ -97,6 +99,9 @@ def load(file, context=default_context(), opts=None):
         obj_lookup[name_idx] = arc
         return arc
 
+    # Отладочная информация о полученных данных из файл при чтении
+    print("Отладочная информация о полученных данных из файл при чтении")
+    print(len(data['arcs']), data['arcs'])
     arcs = list(starmap(make_arc, data['arcs'].items()))
 
     if graphics is not None:

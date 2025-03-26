@@ -1,9 +1,13 @@
 from PyQt5 import uic
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QDialog
+from PyQt5.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QDialog, QTabWidget
 from editor.mode import ModeSwitch, Mode
 from editor.simulationcontroller import SimulationController
 from pathlib import Path
+
+from editor.monitoring_widget import MonitoringWidget
+
+from editor.monitoring_system import MonitoringSystem
 
 
 class MainWindow(QMainWindow):
@@ -36,6 +40,29 @@ class MainWindow(QMainWindow):
 
         # Подключаем кнопку "Создать" к обработчику
         self.actionCreate.triggered.connect(self.open_configure_smo)
+
+        # Инициализируем систему мониторинга и добавляем ее в контроллер
+        self.simulation_controller.monitoring_system = MonitoringSystem(self.simulation_controller)
+
+        # Создаем виджет мониторинга
+        self.monitoring_widget = MonitoringWidget(self.simulation_controller.monitoring_system)
+
+        # Проверяем, есть ли уже TabWidget, если нет - создаем его
+        if not hasattr(self, 'tab_widget'):
+            self.tab_widget = QTabWidget(self)
+            # Добавляем TabWidget в основной интерфейс (центральный виджет)
+            self.centralWidget().layout().addWidget(self.tab_widget)
+
+        # Добавляем вкладку мониторинга
+        self.tab_widget.addTab(self.monitoring_widget, "Мониторинг")
+
+    def closeEvent(self, event):
+        """Обработка закрытия главного окна"""
+        # Останавливаем обновление мониторинга в реальном времени
+        if hasattr(self, 'simulation_controller') and hasattr(self.simulation_controller, 'monitoring_system'):
+            self.simulation_controller.monitoring_system.stop_realtime_monitoring()
+
+        super().closeEvent(event)
 
     @property
     def mode(self) -> Mode:
@@ -90,6 +117,7 @@ class MainWindow(QMainWindow):
 
         if filename:
             self.filename = filename
+
             try:
                 with open(self.filename, 'r') as f:
                     self.editor.load_petrinet(f)  # Загружаем петрограмму

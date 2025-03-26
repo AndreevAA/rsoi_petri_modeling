@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import *
 from mainwindow import *
+from PyQt5.QtCore import QObject
 
 
 class App:
@@ -20,9 +21,23 @@ class App:
         self.qapp = QApplication(sys_argv)  # Создание экземпляра QApplication
         self.main_window = MainWindow(root_path)  # Создание экземпляра главного окна
 
+    # app/__init__.py
     def run(self):
         """
         Отображает главное окно и запускает главный цикл обработки событий приложения.
         """
-        self.main_window.show()  # Показывает главное окно
-        self.qapp.exec()  # Запускает цикл обработки событий
+        # Добавляем метод обновления в SimulationController без использования сигналов
+        original_step = self.main_window.simulation_controller.step
+
+        def wrapped_step(*args, **kwargs):
+            result = original_step(*args, **kwargs)
+            # После выполнения шага обновляем мониторинг
+            if hasattr(self.main_window, 'monitoring_widget'):
+                self.main_window.monitoring_widget.update_charts()
+            return result
+
+        # Заменяем оригинальный метод step
+        self.main_window.simulation_controller.step = wrapped_step
+
+        self.main_window.show()
+        self.qapp.exec()

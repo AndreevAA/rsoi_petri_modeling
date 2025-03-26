@@ -1,13 +1,20 @@
-from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import QTimer, pyqtSignal
 from . import Editor
 from petnetsim import PetriNet
 from petnetsim.elements import TransitionTimed
 from time import time
 from itertools import chain
 
+from .monitoring_system import MonitoringSystem
+
 
 class SimulationController:
+    # Определяем сигнал как классовый атрибут ПЕРЕД методом __init__
+    step_completed = pyqtSignal()
+
     def __init__(self, main_window, editor: Editor):
+        super(SimulationController, self).__init__()
+
         self.main_window = main_window
         self.editor = editor
         self.petrinet = PetriNet((), (), ())  # empty net, will be replaced
@@ -19,6 +26,9 @@ class SimulationController:
         self.animate_timer = QTimer()
         self.animate_timer.timeout.connect(self.animate)
         self.animate_waiting = True  # timer is running, but no animation and stepping should be done now
+
+        # Инициализация системы мониторинга
+        self.monitoring_system = MonitoringSystem(self)
 
     def init_petrinet(self):
         self.petrinet = self.editor.verified_petrinet(inform_success=False, include_item_lookups=True)
@@ -37,6 +47,8 @@ class SimulationController:
 
         for arc_item in self.petrinet.arc_item_lookup.values():
             arc_item.fired_marker_set_visibility(False)
+
+        self.monitoring_system.start_monitoring()
 
     def run(self):
         self.auto_run_next_step = True
@@ -81,6 +93,8 @@ class SimulationController:
 
             for t in self.petrinet.fired:
                 self.petrinet.transition_item_lookup[t].set_brush(True)
+
+        self.monitoring_system.record_step()
 
     @property
     def step_number(self):
